@@ -1,12 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from products.forms import productsForm
+from products.models import Products
+from products.forms import ProductsForm
+from django.contrib import messages
 
 def products(request):
     '''
     Render the products page
     '''
-    return render(request, 'products/products.html')
+    products = Products.objects.all()
+    context = {'products':products}
+    
+    return render(request, 'products/products.html', context)
 
 def productsCreate(request):
     '''
@@ -17,5 +22,14 @@ def productsCreate(request):
     '''
     template = 'products/productsCreate.html'
     if request.method == 'GET':
-        return render(request, template, {'productsForm':productsForm()})
+        return render(request, template, {'productsForm':ProductsForm()})
+    
+    # POST
+    productsForm = ProductsForm(request.POST)
+    if not productsForm.is_valid():
+        return render(request, template, {'productsForm':productsForm})
+
+    productsForm.save()
+    messages.success(request, '商品已新增')
+    return redirect('products:products')
 

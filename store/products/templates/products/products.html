@@ -1,5 +1,15 @@
 {% extends "main/base.html" %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'article/css/article.css' %}">
+{% endblock %}
 {% block heading %}商品{% endblock %}
 {% block content %}
 <p><a class="btn" href="{% url 'products:productsCreate' %}">新增產品</a></p>
+{% for products in products %}
+      <h3>{{ products.title }}</h3>
+      <p>發表時間：{{ products.pubDateTime|date:'Y-m-d H:i' }}</p>
+      <div class="articleContent">{{ products.content }}</div>
+      <hr>
+    {% endfor %}
 {% endblock %}
