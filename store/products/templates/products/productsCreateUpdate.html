@@ -1,18 +1,24 @@
 {% extends 'main/base.html' %}
-
-{% block heading %}新增產品{% endblock %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+{% block heading %}
+  {% if productsForm.instance.id %}
+    修改文章
+  {% else %}
+    新增文章
+  {% endif %}
+{% endblock %}
 {% block content %}
-{% if articleForm.instance.id %}
-<h2>修改文章</h2>
-  <form method="post" action="{% url 'article:articleUpdate' articleForm.instance.id %}">
+{% if productsForm.instance.id %}
+<form method="post" action="{% url 'products:productsCreate' productsForm.instance.id %}">
 {% else %}
-  <h2>新增文章</h2>
-<form method="post" action="{% url 'products:productsCreate'%}">
+<form method="post" action="{% url 'products:productsUpdate'%}">
 {% endif %}
   {% csrf_token %}
   {{ productsForm.as_p }}
   <input class="btn" type="submit" value="送出">
   <a class="btn" href="{% url 'products:products' %}">放棄</a>
 </form>
-
 {% endblock %}

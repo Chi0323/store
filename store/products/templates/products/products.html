@@ -1,16 +1,19 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'article/css/article.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 {% block heading %}商品{% endblock %}
 {% block content %}
 <p><a class="btn" href="{% url 'products:productsCreate' %}">新增產品</a></p>
-<a class="btn inlineBlock" href="{% url 'products:productsUpdate' products.id %}">修改</a>
-{% for products in products %}
-      <h3>{{ products.title }}</h3>
+<p><a class="btn" href="{% url 'products:productsUpdate' products.id %}">修改</a></p>
+  {% for products in products %}
+      <h3><a href="{% url 'products:productsRead' products.id %}">{{ products.title }}</h3>
       <p>發表時間：{{ products.pubDateTime|date:'Y-m-d H:i' }}</p>
-      <div class="articleContent">{{ products.content }}</div>
+      <div class="productsContent">{{ products.content }}</div>
       <hr>
-    {% endfor %}
+   {% endfor %}
+{% endblock %}
+{% block script %}
+<script src={% static 'main/js/deleteConfirm.js' %}></script>
 {% endblock %}

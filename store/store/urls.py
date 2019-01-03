@@ -18,10 +18,10 @@ from django.urls import path, include, re_path
 from main import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('main/', include('main.urls', namespace='main')),
+    path('admin/', admin.site.urls),   
     path('account/', include('account.urls', namespace='account')),
     path('cart/', include('cart.urls', namespace='cart')),
-    path('products/', include('products.urls', namespace='products')),    
+    path('products/', include('products.urls', namespace='products')),
+    path('main/', include('main.urls', namespace='main')),    
     re_path('.*', views.main),
 ]

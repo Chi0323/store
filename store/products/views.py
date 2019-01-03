@@ -1,17 +1,19 @@
-from django.shortcuts import render, redirect
-
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from products.models import Products
 from products.forms import ProductsForm
-from django.contrib import messages
+
 
 def products(request):
     '''
     Render the products page
     '''
     products = Products.objects.all()
-    context = {'products':products}
-    
-    return render(request, 'products/products.html', context)
+    context = {
+        'products': products,
+        
+    }
+    return render(request,'products/products.html', context)
 
 def productsCreate(request):
     '''
@@ -20,7 +22,7 @@ def productsCreate(request):
         2. If method is POST, perform form validation and display error messages if the form is invalid
         3. Save the form to the model and redirect the user to the products page
     '''
-    template = 'products/articleCreateUpdate.html'
+    template = 'products/productsCreateUpdate.html'
     if request.method == 'GET':
         return render(request, template, {'productsForm':ProductsForm()})
     
@@ -33,15 +35,29 @@ def productsCreate(request):
     messages.success(request, '商品已新增')
     return redirect('products:products')
 
+def productsRead(request, productsId):
+    '''
+    Read an products
+        1. Get the "products" instance using "productsId"; redirect to the 404 page if not found
+        2. Render the productsRead template with the products instance and its
+           associated comments
+    '''
+    products = get_object_or_404(products, id=productsId)
+    context = {
+        'products': products,
+        
+    }
+    return render(request, 'products/productsRead.html', context)
+
 def productsUpdate(request, productsId):
     '''
-    Update the article instance:
-        1. Get the article to update; redirect to 404 if not found
+    Update the products instance:
+        1. Get the products to update; redirect to 404 if not found
         2. Render a bound form if the method is GET
         3. If the form is valid, save it to the model, otherwise render a
            bound form with error messages
     '''
-    #products = get_object_or_404(Products, id=productsId)
+    products = get_object_or_404(Products, id=productsId)
     template = 'products/productsCreateUpdate.html'
     if request.method == 'GET':
         productsForm = ProductsForm(instance=products)

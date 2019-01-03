@@ -1,0 +1,11 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+{% block heading %}商品{% endblock %}
+{% block content %}
+<h3>{{ products.title }}</h3>
+    <p>發表時間：{{ article.pubDateTime|date:'Y-m-d H:i' }}</p>
+    <div class="productsContent">{{ products.content|linebreaks }}</div>
+{% endblock %}
