@@ -6,6 +6,7 @@
 {% block heading %}商品{% endblock %}
 {% block content %}
 <p><a class="btn" href="{% url 'products:productsCreate' %}">新增產品</a></p>
+<a class="btn inlineBlock" href="{% url 'products:productsUpdate' products.id %}">修改</a>
 {% for products in products %}
       <h3>{{ products.title }}</h3>
       <p>發表時間：{{ products.pubDateTime|date:'Y-m-d H:i' }}</p>

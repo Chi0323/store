@@ -1,6 +1,6 @@
-from populate import admin, users, products
+from populate import admin, users, product
 
 
 admin.populate()
 users.populate()
-products.populate()
+product.populate()
