@@ -1,10 +1,9 @@
 from populate import base
-from products.models import Products,two
+from products.models import Products
 
 def populate():
     print('Populating articles and comments ... ', end='')
     Products.objects.all().delete()
-    two.objects.all().delete()
 
 
     
