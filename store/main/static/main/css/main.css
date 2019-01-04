@@ -1,21 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   height: 100%;
+  width: 100%;
 }
 
 body {
-  padding: 20px;
- 
+  padding: 20px; 
+}
+
+nav{
+  margin: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul a{
+  text-decoration: none;
+  font-size: 16px;
 }
 
 ul#menu {
-  margin-bottom: 30px;
   text-align: right;
+  background-color: #64B5F7;
+  border: thin solid #64B5F7;
+  padding: 0.8em 0;
+
 }
 
-ul#menu li {
-  display: inline-block;
+ul#menu li{
+  border-right: 1px solid #1A76D2;    
 }
+
+ul#menu a {   /* 大多數的按鈕外觀在此設定 */
+  display: block;
+  padding: 0 1em;  
+  color: white;
+}
+
+ul#menu li:last-child {
+  border-right: none;   
+}
+
+ul#menu2 {
+  text-align: center;
+  border: 1px solid #E0E0E0;
+  background-color: white;
+}
+
+ul#menu2 a {                  /* 大多數的按鈕外觀在此設定 */
+  display: block;           /* 區塊顯示，因此允許設定 padding */
+  color: black;
+  padding: 0.2em 2em;       /* 按鈕尺寸由 <a> 撐開 */
+  /*border: 1px solid black;  */
+}
+
+
 /* Button */
 .btn {
   font-family: Arial;
