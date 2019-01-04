@@ -12,9 +12,9 @@
 {% endblock %}
 {% block content %}
 {% if productsForm.instance.id %}
-<form method="post" action="{% url 'products:productsCreate' productsForm.instance.id %}">
+<form method="post" action="{% url 'products:productsUpdate' productsForm.instance.id %}">
 {% else %}
-<form method="post" action="{% url 'products:productsUpdate'%}">
+<form method="post" action="{% url 'products:productsCreate'%}">
 {% endif %}
   {% csrf_token %}
   {{ productsForm.as_p }}

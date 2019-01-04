@@ -9,6 +9,7 @@ def products(request):
     Render the products page
     '''
     products = Products.objects.all()
+    print(products)
     context = {
         'products': products,
         

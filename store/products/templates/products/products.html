@@ -6,11 +6,12 @@
 {% block heading %}商品{% endblock %}
 {% block content %}
 <p><a class="btn" href="{% url 'products:productsCreate' %}">新增產品</a></p>
-<p><a class="btn" href="{% url 'products:productsUpdate' products.id %}">修改</a></p>
-  {% for products in products %}
-      <h3><a href="{% url 'products:productsRead' products.id %}">{{ products.title }}</h3>
-      <p>發表時間：{{ products.pubDateTime|date:'Y-m-d H:i' }}</p>
-      <div class="productsContent">{{ products.content }}</div>
+
+  {% for product in products %}
+      <p><a class="btn" href="{% url 'products:productsUpdate' product.id %}">修改</a></p>
+      <h3><a href="{% url 'products:productsRead' product.id %}">{{ product.title }}</h3>
+      <p>發表時間：{# product.pubDateTime|date:'Y-m-d H:i' #}</p>
+      <div class="productsContent">{{ product.content }}</div>
       <hr>
    {% endfor %}
 {% endblock %}

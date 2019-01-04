@@ -8,7 +8,8 @@ class ProductsForm(forms.ModelForm):
     specifications = forms.CharField(label='規格', max_length=100)
     price = forms.IntegerField(label='價格', widget=forms.NumberInput())
     quantity = forms.IntegerField(label='數量', widget=forms.NumberInput())
+    
 
     class Meta:
         model = Products
-        fields = ['title', 'content' ,'specifications','price','quantity']
+        fields = '__all__'
