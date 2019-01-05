@@ -5,9 +5,6 @@
 {% endblock %}
 {% block heading %}商品{% endblock %}
 {% block content %}
-<p><a class="btn" href="{% url 'products:productsCreate' %}">新增產品</a></p>
-
-  {% for product in products %}
       <p><a class="btn inlineBlock" href="{% url 'products:productsUpdate' product.id %}">修改</a></p>
       <form class="inlineBlock" method="post" action="{% url 'products:productsDelete' product.id %}">
         {% csrf_token %}
@@ -19,7 +16,7 @@
       <p>{{ product.price }}</p> 
       <p>{{ product.quantity }}</p> 
       <hr>
-   {% endfor %}
+
 {% endblock %}
 {% block script %}
 <script src={% static 'main/js/deleteConfirm.js' %}></script>

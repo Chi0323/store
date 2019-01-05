@@ -42,7 +42,9 @@ def productsRead(request, productsId):
         2. Render the productsRead template with the products instance and its
            associated comments
     '''
-    return render(request, 'products/products.html')
+    products = get_object_or_404(Products, id=productsId)
+    context = {'products': products,}
+    return render(request, 'products/productsRead.html', context)
 
 def productsUpdate(request, productsId):
     '''
@@ -65,7 +67,7 @@ def productsUpdate(request, productsId):
 
     productsForm.save()
     messages.success(request, '產品已修改') 
-    return redirect('products:products', productsId=productsId)
+    return redirect('products:productsRead', productsId=productsId)
 
 def productsDelete(request, productstId):
     '''
