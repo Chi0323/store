@@ -10,10 +10,9 @@ def products(request):
     '''
     products = Products.objects.all()
     print(products)
-    context = {
-        'products': products,
-        
-    }
+
+    context = {'products': products,}    
+    
     return render(request,'products/products.html', context)
 
 def productsCreate(request):
@@ -43,12 +42,7 @@ def productsRead(request, productsId):
         2. Render the productsRead template with the products instance and its
            associated comments
     '''
-    products = get_object_or_404(products, id=productsId)
-    context = {
-        'products': products,
-        
-    }
-    return render(request, 'products/productsRead.html', context)
+    return render(request, 'products/products.html')
 
 def productsUpdate(request, productsId):
     '''
@@ -70,6 +64,20 @@ def productsUpdate(request, productsId):
         return render(request, template, {'productsForm':productsForm})
 
     productsForm.save()
-    messages.success(request, '文章已修改') 
+    messages.success(request, '產品已修改') 
     return redirect('products:products', productsId=productsId)
 
+def productsDelete(request, productstId):
+    '''
+    Delete the product instance:
+        1. Render the products page if the method is GET
+        2. Get the products to delete; redirect to 404 if not found
+    '''
+    if request.method == 'GET':
+        return products(request)
+
+    # POST
+    products = get_object_or_404(Products, id=productstId)
+    products.delete()
+    messages.success(request, '文章已刪除')  
+    return redirect('products:products')

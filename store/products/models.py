@@ -5,7 +5,8 @@ class Products(models.Model):
     content = models.TextField()
     specifications = models.CharField(max_length=128)
     price = models.IntegerField()
-    quantity = models.IntegerField()                    
+    quantity = models.IntegerField()                   
     
     def __str__(self):
         return self.title
+    
