@@ -35,18 +35,18 @@ def productsCreate(request):
     messages.success(request, '商品已新增')
     return redirect('products:products')
 
-def productsRead(request, productsId):
+def productsRead(request, productId):
     '''
     Read an products
-        1. Get the "products" instance using "productsId"; redirect to the 404 page if not found
+        1. Get the "products" instance using "productId"; redirect to the 404 page if not found
         2. Render the productsRead template with the products instance and its
            associated comments
     '''
-    products = get_object_or_404(Products, id=productsId)
+    products = get_object_or_404(Products, id=productId)
     context = {'products': products,}
     return render(request, 'products/productsRead.html', context)
 
-def productsUpdate(request, productsId):
+def productsUpdate(request, productId):
     '''
     Update the products instance:
         1. Get the products to update; redirect to 404 if not found
@@ -54,7 +54,7 @@ def productsUpdate(request, productsId):
         3. If the form is valid, save it to the model, otherwise render a
            bound form with error messages
     '''
-    products = get_object_or_404(Products, id=productsId)
+    products = get_object_or_404(Products, id=productId)
     template = 'products/productsCreateUpdate.html'
     if request.method == 'GET':
         productsForm = ProductsForm(instance=products)
@@ -67,9 +67,9 @@ def productsUpdate(request, productsId):
 
     productsForm.save()
     messages.success(request, '產品已修改') 
-    return redirect('products:productsRead', productsId=productsId)
+    return redirect('products:productsRead', productId=productId)
 
-def productsDelete(request, productstId):
+def productsDelete(request, productId):
     '''
     Delete the product instance:
         1. Render the products page if the method is GET
@@ -79,7 +79,7 @@ def productsDelete(request, productstId):
         return products(request)
 
     # POST
-    products = get_object_or_404(Products, id=productstId)
+    products = get_object_or_404(Products, id=productId)
     products.delete()
     messages.success(request, '文章已刪除')  
     return redirect('products:products')
