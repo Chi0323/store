@@ -1,4 +1,5 @@
-<
+<div id="one">
+  <div style="float:right">
   <ul id="menu">
     <li><a href="{% url 'main:main' %}">首頁</a></li><li>
     {% if user.is_authenticated %}
@@ -9,8 +10,11 @@
     {% endif %}
     <a href="{% url 'cart:cart' %}">購物車</a></li>
    </ul>
+   
+   </div>
+   <div id="Lemon">Lemon電器</div>
+ </div>
   
-  Lemon電器
  
  
  <ul id="menu2">

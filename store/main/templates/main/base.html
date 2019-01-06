@@ -8,10 +8,23 @@
     {% block css %}{% endblock %}
   </head>
   <body>
+  <nav>
     {% include 'main/menu.html' %}
-    <h2>{% block heading %}{% endblock %}</h2>
-    {% include 'main/messages.html' %}
-    {% block content %}{% endblock %}
+  </nav>
+  {% block header %}{% endblock %}
+
+  
+  <aside>這是aside</aside>
+  
+  <div id="content">
+  <h2>{% block heading %}{% endblock %}</h2>
+    
+      {% block content %}{% endblock %}
+      {% include 'main/messages.html' %}
+  </div>
+  
+    
+  <footer>這是footer</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% block script %}{% endblock %}
   </body>
