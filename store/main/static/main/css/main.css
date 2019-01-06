@@ -73,6 +73,11 @@ ul#menu2 a {                  /* 大多數的按鈕外觀在此設定 */
   background: linear-gradient(#f7f7f7, #dedede);
 }
 
+/* Misc */
+.inlineBlock {
+  display: inline-block;
+}
+
 /* Messages */
 .success, .error {
   padding: 1em 0 1em 3em;
