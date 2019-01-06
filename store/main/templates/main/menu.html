@@ -1,5 +1,5 @@
-<nav>
- <ul id="menu">
+<
+  <ul id="menu">
     <li><a href="{% url 'main:main' %}">首頁</a></li><li>
     {% if user.is_authenticated %}
        <a href="{% url 'account:logout' %}">登出 ({{ user.username }})</a></li><li>
@@ -8,7 +8,11 @@
        <a href="{% url 'account:register' %}">註冊</a></li><li>
     {% endif %}
     <a href="{% url 'cart:cart' %}">購物車</a></li>
- </ul>
+   </ul>
+  
+  Lemon電器
+ 
+ 
  <ul id="menu2">
     <li><a href="#">廚房家電</a></li><li>
     <a href="#">美容家電</a></li><li>
@@ -16,4 +20,4 @@
     <a href="#">3C家電</a></li><li>
     <a href="#">優惠家電</a></li>
   </ul>
-</nav>
+  
