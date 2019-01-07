@@ -1,17 +1,17 @@
 {% extends "main/base.html" %}
 {% load staticfiles %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
 {% endblock %}
 {% block heading %}商品{% endblock %}
 {% block content %}
-      <p><a class="btn inlineBlock" href="{% url 'products:productsUpdate' product.id %}">修改</a></p>
-      <form class="inlineBlock" method="post" action="{% url 'products:productsDelete' product.id %}">
+      <p><a class="btn inlineBlock" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
+      <form class="inlineBlock" method="post" action="{% url 'product:productDelete' product.id %}">
         {% csrf_token %}
         <input class="btn deleteConfirm" type="submit" value="刪除">
       </form>
       <h3>{{ product.title }}</h3>        
-      <div class="productsContent">{{ product.content|linebreaks }}</div>
+      <div class="productContent">{{ product.content|linebreaks }}</div>
       <p>{{ product.specifications }}</p> 
       <p>{{ product.price }}</p> 
       <p>{{ product.quantity }}</p> 

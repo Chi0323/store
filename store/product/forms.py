@@ -1,8 +1,8 @@
 from django import forms
-from products.models import Products
+from product.models import Product
 
 
-class ProductsForm(forms.ModelForm):
+class ProductForm(forms.ModelForm):
     title = forms.CharField(label='標題', max_length=128)
     content = forms.CharField(label='內容', widget=forms.Textarea)
     specifications = forms.CharField(label='規格', max_length=100)
@@ -11,5 +11,5 @@ class ProductsForm(forms.ModelForm):
     
 
     class Meta:
-        model = Products
+        model = Product
         fields = '__all__'
