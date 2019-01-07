@@ -3,13 +3,21 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'account/css/account.css' %}">
 {% endblock %}
-{% block heading %}會員登入{% endblock %}
 {% block content %}
+ {% csrf_token %}
 <form method="post" action="{% url 'account:login' %}">
-  {% csrf_token %}
-  <p><input class="data" type="text" name="username" placeholder="帳號（E-mail）" ></p>
-  <p><input class="data" type="password" name="password" placeholder="密碼"></p>
-  <p><input class="btn" type="submit" value="登入"></p>
-  <p><a class="line" href="{% url 'account:register' %}">立即註冊</a></p>
+ <table border="1">
+  <tr>
+    <td><p class="title">會員登入</p></td>
+  </tr>
+    <td><input class="data" type="text" name="username" placeholder="帳號（E-mail）" ></th>
+  </tr>
+    <td><input class="data" type="password" name="password" placeholder="密碼"></th>
+  </tr>
+    <td><input type="submit" value="登入"></th>
+  </tr>
+    <td><a class="line" href="{% url 'account:register' %}">立即註冊</a></th>
+  </tr>
+</table> 
 </form>
 {% endblock %}
