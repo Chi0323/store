@@ -29,7 +29,6 @@ def productCreate(request):
     productForm = ProductForm(request.POST)
     if not productForm.is_valid():
         return render(request, template, {'productForm':productForm})
-
     productForm.save()
     messages.success(request, '商品已新增')
     return redirect('product:product')

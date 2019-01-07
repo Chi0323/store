@@ -5,17 +5,31 @@
 {% endblock %}
 {% block heading %}商品{% endblock %}
 {% block content %}
+      <h3 class="inlineBlock">{{ product.title }}</h3>
       <p><a class="btn inlineBlock" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
       <form class="inlineBlock" method="post" action="{% url 'product:productDelete' product.id %}">
         {% csrf_token %}
         <input class="btn deleteConfirm" type="submit" value="刪除">
-      </form>
-      <h3>{{ product.title }}</h3>        
-      <div class="productContent">{{ product.content|linebreaks }}</div>
-      <p>{{ product.specifications }}</p> 
-      <p>{{ product.price }}</p> 
-      <p>{{ product.quantity }}</p> 
-      <hr>
+      </form>       
+      
+      <table border="1">
+		<tr>
+		  <th>產品介紹</th>
+		  <th><div class="productContent">{{ product.content|linebreaks }}</div></th>
+		</tr>
+		<tr>
+		  <td>規格</td>
+		  <td><p>{{ product.specifications }}</p> </td>
+		</tr>
+		<tr>
+		  <td>價錢</td>
+		  <td><p>{{ product.price }}</p> </td>
+		</tr>
+		<tr>
+		  <td>數量</td>
+		  <td><p>{{ product.price }}</p> </td>
+		</tr>
+		</table>
 
 {% endblock %}
 {% block script %}
