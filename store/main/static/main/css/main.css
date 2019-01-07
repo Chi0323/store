@@ -72,11 +72,29 @@ ul#asidetwo {
   padding:0;
   
 }
+ul#asidetwo ul{
+  display: none;
+}
+ul#asidetwo li:hover>ul{
+  display: block;
+  padding:0;
+  list-style-type: disc; 
+}
+ul#asidetwo a{
+  color: black;
+}
+ul#asidetwo a:hover{
+  background-color: #ef5c28;
+        color: #fff;
+}
 ul#asidetwo li{
   display: block;
   padding: 10px 0;
   text-align:left;
   
+}
+ul#aside3{
+  list-style-type: disc; 
 }
 ul#footerone{
   display: inline-block;
