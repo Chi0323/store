@@ -4,8 +4,10 @@
 <link rel="stylesheet" href="{% static 'product/css/product.css' %}">
 {% endblock %}
 {% block content %}
-
-	<div>
+<div class="left">
+<img class="photo" src="/static/product/img/01.jpg">
+</div>
+	<div class="right">
       <h3 class="inlineBlock">{{ product.title }}</h3>
       <p class="inlineBlock"><a class="btn" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
       <form class="inlineBlock" method="post" action="{% url 'product:productDelete' product.id %}">
@@ -22,15 +24,22 @@
 		  <td><p class="title">規格</p></td>
 		  <td><p>{{ product.specifications }}</p> </td>
 		</tr>
+        <tr>
+          <td><p class="title">品牌</p></td>
+          <td><p>{{ product.brand }}</p> </td>
+        </tr>
 		<tr>
 		  <td><p class="title">價錢</p></td>
-		  <td><p>{{ product.price }}</p> </td>
+		  <td><p class="red">${{ product.price }}</p> </td>
 		</tr>
 		<tr>
 		  <td><p class="title">數量</p></td>
 		  <td><p>{{ product.quantity }}</p> </td>
 		</tr>
 		</table>
+    <p class="inlineBlock"><input class="btn3" type="submit" value="加入購物車"></p>
+    <p class="inlineBlock"><input class="btn4" type="submit" value="直接購買"></p>
+    
 	</div>
 
 {% endblock %}
