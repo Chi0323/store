@@ -6,8 +6,10 @@ td{
   /*border: none;*/
   padding: 5px;
 }
-.photo{
-  height:1em;
+.photo img{
+  height:200px;
+  width::200px;
+  
 }
 .t1{  
   margin: 0;  

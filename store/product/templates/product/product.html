@@ -8,7 +8,7 @@
   {% for product in products %}    
 <table border="1" class="inlineBlock">
   <tr>
-    <td class="photo"><p class="t1">圖</p></td>
+    <td class="photo"><img src="/static/product/img/01.jpg"></td>
   </tr>
   <tr>
     <td><p class="t1"><a href="{% url 'product:productRead' product.id %}">{{ product.title }}</a></p></td>
