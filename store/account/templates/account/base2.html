@@ -1,0 +1,23 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Lemon電器</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'account/css/account.css' %}">
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+  <nav>
+    {% include 'main/menu.html' %}
+  </nav>  
+  <div id="content2">
+  	{% include 'main/messages.html' %}    
+    {% block content %}{% endblock %}      
+  </div>    
+  <footer>{% include 'main/footer.html' %}</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% block script %}{% endblock %}
+  </body>
+</html>

@@ -3,33 +3,35 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'product/css/product.css' %}">
 {% endblock %}
-{% block heading %}商品{% endblock %}
 {% block content %}
+
+	<div>
       <h3 class="inlineBlock">{{ product.title }}</h3>
-      <p><a class="btn inlineBlock" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
+      <p class="inlineBlock"><a class="btn" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
       <form class="inlineBlock" method="post" action="{% url 'product:productDelete' product.id %}">
         {% csrf_token %}
         <input class="btn deleteConfirm" type="submit" value="刪除">
       </form>       
-      
+      <hr>
       <table border="1">
 		<tr>
-		  <th>產品介紹</th>
-		  <th><div class="productContent">{{ product.content|linebreaks }}</div></th>
+		  <td><p class="title">產品介紹</p></td>
+		  <td><div class="productContent">{{ product.content|linebreaks }}</div></td>
 		</tr>
 		<tr>
-		  <td>規格</td>
+		  <td><p class="title">規格</p></td>
 		  <td><p>{{ product.specifications }}</p> </td>
 		</tr>
 		<tr>
-		  <td>價錢</td>
+		  <td><p class="title">價錢</p></td>
 		  <td><p>{{ product.price }}</p> </td>
 		</tr>
 		<tr>
-		  <td>數量</td>
-		  <td><p>{{ product.price }}</p> </td>
+		  <td><p class="title">數量</p></td>
+		  <td><p>{{ product.quantity }}</p> </td>
 		</tr>
 		</table>
+	</div>
 
 {% endblock %}
 {% block script %}

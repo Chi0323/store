@@ -1,8 +1,5 @@
-{% extends "main/base.html" %}
+{% extends "account/base2.html" %}
 {% load staticfiles %}
-{% block css %}
-<link rel="stylesheet" href="{% static 'account/css/account.css' %}">
-{% endblock %}
 {% block content %}
 <form method="post" action="{% url 'account:register' %}">
     {% csrf_token %}
@@ -11,12 +8,12 @@
     <td><p class="title">加入會員</p></td>
   </tr>
   <tr>
-   <td class="form">
+   <td>
     {{ userForm.as_p }}
     </td>
   </tr>
   <tr>
-    <td><input type="submit" value="註冊"></th>
+    <td><input class="btn2" type="submit" value="註冊"></th>
   </tr>
   <tr>
     <td><p class="line">已經加入會員？ <a class="line" href="{% url 'account:login' %}">按此登入</a></p></th>

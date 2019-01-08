@@ -3,20 +3,29 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'product/css/product.css' %}">
 {% endblock %}
-{% block heading %}商品{% endblock %}
 {% block content %}
-<p><a class="btn" href="{% url 'product:productCreate' %}">新增產品</a></p>
-
-  {% for product in products %}
-      <p><a class="btn inlineBlock" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
+<div><a class="btn" href="{% url 'product:productCreate' %}">新增產品</a></div>
+  {% for product in products %}    
+<table border="1" class="inlineBlock">
+  <tr>
+    <td class="photo"><p class="t1">圖</p></td>
+  </tr>
+  <tr>
+    <td><p class="t1"><a href="{% url 'product:productRead' product.id %}">{{ product.title }}</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="t1">售價${{ product.price }}</p></td>
+  </tr>
+  <tr>
+	<td align="center">
+	  <p class="inlineBlock t1"><a class="btn" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
       <form class="inlineBlock" method="post" action="{% url 'product:productDelete' product.id %}">
         {% csrf_token %}
         <input class="btn deleteConfirm" type="submit" value="刪除">
-      </form>
-      <h3><a href="{% url 'product:productRead' product.id %}">{{ product.title }}</h3>        
-      <p>{{ product.price }}</p> 
-
-      <hr>
+      </form> 
+    </td>
+  </tr> 
+</table>
    {% endfor %}
 {% endblock %}
 {% block script %}
