@@ -78,7 +78,8 @@ ul#asidetwo ul{
 ul#asidetwo li:hover>ul{
   display: block;
   padding:0;
-  list-style-type: disc; 
+  list-style-type: disc;
+  
 }
 ul#asidetwo a{
   color: black;
@@ -89,7 +90,7 @@ ul#asidetwo a:hover{
 }
 ul#asidetwo li{
   display: block;
-  padding: 10px 0;
+  padding: 10px 10px;
   text-align:left;
   
 }

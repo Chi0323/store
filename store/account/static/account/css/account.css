@@ -12,6 +12,17 @@ table{
   margin-right:auto;  
  /* border: 1px solid red;*/
 }
+#frameone{
+    border-collapse: collapse;
+    border: 1px solid lightgray;
+}
+
+#frameone th{
+    margin: 0;
+    padding: 15px 30px;
+    border: 1px solid lightgray;
+    background-color: #E0E0E0
+}
 
 .title{
   text-align: center;
