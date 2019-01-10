@@ -1,4 +1,30 @@
 {% extends "account/frame.html" %}
 {% block frame %}
-123
+<p>你好,{{ user.fullName }} <a class="line" href="{% url 'account:logout' %}">登出</a></p>
+<table border="1">
+<tr>
+  <td>會員級別：</td>
+  <td>一般會員</th>
+</tr>
+<tr>
+  <td>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</td>
+  <td>{{ user.fullName }}</th>
+</tr>
+<tr>
+  <td>生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日：</td>
+  <td>{{ user.birthday }}</td>
+</tr>
+<tr>
+  <td>電子信箱：</td>
+  <td>{{ user.username }}</td>
+</tr>
+<tr>
+  <td>聯絡電話：</td>
+  <td>{{ user.telephone }}</td>
+</tr>
+<tr>
+  <td>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</td>
+  <td>{{ user.address }}</td>
+</tr>
+</table>
 {% endblock %}

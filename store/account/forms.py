@@ -2,15 +2,14 @@ from django import forms
 from account.models import User
 
 class UserForm(forms.ModelForm):
-    username = forms.CharField(
+    username = forms.EmailField(
         required=True,
         error_messages={
-            "required": "用户名不能為空",
-            "min_length": "用户名長度不能小於6", 
-            "max_length": "用户名長度不能小於15"
+            "required": "郵箱不能為空",
+            "invalid": "郵箱格式錯誤",
         },
         label='', 
-        widget=forms.TextInput(attrs={"placeholder": "帳號", "class": "form-control"})
+        widget=forms.TextInput(attrs={"placeholder": "帳號 E-mail", "class": "form-control"})
         )
     password = forms.CharField(
         required=True,
