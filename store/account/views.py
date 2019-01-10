@@ -57,8 +57,8 @@ def logout(request):
     messages.success(request, '歡迎再度光臨')
     return redirect('main:main')
 
-def edit(request):
+def account(request):
     '''
     Render the edit page
     '''
-    return render(request, 'account/edit.html')
+    return render(request, 'account/account.html')

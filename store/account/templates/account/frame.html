@@ -1,11 +1,17 @@
+{% extends "account/base2.html" %}
+{% block content %}
 <table id="frameone"  >
     <tr>
-        <th>會員資料</th>
-        <th>購物車</th>
-        <th>訂單查詢</th>
-        <th>問答紀錄</th>
+        <th><a class="line" href="{% url 'account:account' %}">會員資料</a></th>
+        <th><a class="line" href="{% url 'cart:cart' %}">購物車</a></th>
+        <th><a class="line" href="#">訂單查詢</a></th>
+        <th><a class="line" href="#">問答紀錄</a></th>
     </tr>
     <tr>
-        <td colspan="4"></td>
+        <td colspan="4">
+        {% block frame %}{% endblock %}
+        </td>
     </tr>
 </table>
+{% endblock %}
+

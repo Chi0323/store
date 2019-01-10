@@ -46,12 +46,12 @@ class UserForm(forms.ModelForm):
         )
     telephone = forms.CharField(
         required=True,
-        max_length=11,
-        min_length=11,
+        max_length=10,
+        min_length=10,
         error_messages={
             "required": "手機號碼不能為空",
-            "min_length": "手機號碼長度必須是11位",
-            "max_length": "手機號碼長度必須是11位",
+            "min_length": "手機號碼長度必須是10位",
+            "max_length": "手機號碼長度必須是10位",
         },
         label='', 
         widget=forms.TextInput(attrs={"placeholder": "電話", "class": "form-control"})
