@@ -8,8 +8,43 @@ html, body {
   width: 100%;
 }
 
-body {
-  padding: 20px; 
+#wrapper {
+  width: 75%;    /* 960px */
+  min-width: 800px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+nav {
+  min-width: 800px;
+  border: 1px solid #f2f2f2;
+}
+
+#winter{
+  width:100%;
+  height:359px;
+}
+header {
+  height:361px;
+  border: 1px solid #f2f2f2;
+}
+aside {
+  width: 20%;
+  height: 30em;
+  float: left;
+  border: 1px solid #f2f2f2;
+}
+
+div#content {
+  width: 80%;
+  height: 30em;
+  float: left;
+  border: 1px solid #f2f2f2;
+}
+
+footer {
+  clear: both;
+  border: 1px solid #f2f2f2;
 }
 
 #one{
@@ -19,7 +54,7 @@ body {
 
 div#Lemon{
   font-size:1.5em;
-  color:blue;
+  color:#0D47A0;
 }
 ul li {
   display: inline-block;
@@ -35,12 +70,12 @@ ul#menu {
   text-align: right;
   background-color: #64B5F7;
   border: thin solid #64B5F7;
-  padding-top: 0.3em;
-margin: 0;
+  padding: 0.3em;
+  margin: 0;
 }
 
 ul#menu li{
-  border-right: 1px solid #1A76D2;    
+   border-right: 1px solid #1A76D2;   
 }
 
 ul#menu a {   /* 大多數的按鈕外觀在此設定 */
@@ -55,22 +90,27 @@ ul#menu li:last-child {
 
 ul#menu2 {
   text-align: center;
-  border: 1px solid #E0E0E0;
+  border-right:: 1px solid #f2f2f2;
   background-color: white;
+  padding:0.2em;
   margin: 0;
+}
+ul#menu2 li{
+  border-right:1px solid #f2f2f2;
 }
 
 ul#menu2 a {                  /* 大多數的按鈕外觀在此設定 */
   display: block;           /* 區塊顯示，因此允許設定 padding */
   color: black;
-  padding: 0.2em 2em;       /* 按鈕尺寸由 <a> 撐開 */
-  /*border: 1px solid black;  */
+  padding: 0 3em;       /* 按鈕尺寸由 <a> 撐開 */
 }
+ul#menu2 li:last-child {
+  border-right: none;  
+}
+
 ul#asidetwo {
   margin:0;
-  
   padding:0;
-  
 }
 ul#asidetwo ul{
   display: none;
@@ -128,14 +168,44 @@ p#asideone {
 
 /* Button */
 .btn {
-  font-family: Arial;
   display: inline-block;
-  color: black;
-  font-size: 0.8em;
-  padding: 0.5em 1em;
+  color: white;
+  font-size: 16px;
+  padding: 0.2em 1em;
   text-decoration: none;
-  border: thin solid gray;
-  background: linear-gradient(#f7f7f7, #dedede);
+  border: 1px solid #457acc;
+  background:#457acc;
+}
+
+.btn2{
+  background-color:#ff4447;
+  color:White;  
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ff4447;  
+  text-align: center;
+}
+
+.btn3{
+  background-color:#ffd00a;
+  color:White;  
+  font-size: 18px;
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ffd00a;  
+  text-align: center;
+}
+.btn4 {
+  display: inline-block;
+  color: #888a85;
+  font-size: 16px;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  border: 1px solid #888a85;
+  background:white;
 }
 
 /* Misc */
@@ -158,33 +228,3 @@ p#asideone {
   border: thin solid red;
 }
 
-nav {
-
-  border: 1px solid black;
-}
-
-#winter{
-  width:100%;
-   height:359px;
-}
-header {
-  height:361px;
-  border: 1px solid red;
-}
-aside {
-  width: 20%;
-  height: 30em;
-  float: left;
-  border: 1px solid cyan;
-}
-
-div#content {
-  width: 80%;
-  height: 30em;
-  float: left;
-  border: 1px solid yellow;
-}
-
-footer {
-  border: 1px solid chocolate;
-}

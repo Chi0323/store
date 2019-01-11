@@ -3,12 +3,25 @@ from product.models import Product
 
 
 class ProductForm(forms.ModelForm):
-    title = forms.CharField(label='標題', max_length=128)
-    content = forms.CharField(label='內容', widget=forms.Textarea)
-    brand = forms.CharField(label='品牌', max_length=100)
-    specifications = forms.CharField(label='規格', max_length=100)    
-    price = forms.IntegerField(label='價格', widget=forms.NumberInput())
-    quantity = forms.IntegerField(label='數量', widget=forms.NumberInput())
+    title = forms.CharField(
+        max_length=128,
+        label='標題',        
+        widget=forms.TextInput(attrs={"class": "form-control"}))
+    content = forms.CharField(
+        label='內容', 
+        widget=forms.Textarea(attrs={"class": "form-control"}))
+    brand = forms.CharField(
+        max_length=100,
+        label='品牌', 
+        widget=forms.TextInput(attrs={"class": "form-control"}))
+    specifications = forms.CharField(
+        max_length=100,
+        label='規格', 
+        widget=forms.TextInput(attrs={"class": "form-control"}))    
+    price = forms.IntegerField(label='價格',
+        widget=forms.NumberInput(attrs={"class": "form-control"}))
+    quantity = forms.IntegerField(label='數量',
+        widget=forms.NumberInput(attrs={"class": "form-control"}))
     
 
     class Meta:

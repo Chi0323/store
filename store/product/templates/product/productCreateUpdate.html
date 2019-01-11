@@ -17,8 +17,17 @@
 <form method="post" action="{% url 'product:productCreate'%}">
 {% endif %}
   {% csrf_token %}
-  {{ productForm.as_p }}
-  <input class="btn" type="submit" value="送出">
-  <a class="btn" href="{% url 'product:product' %}">放棄</a>
+  <table class="createproduct" border="1">
+  <tr>
+  {{ productForm.as_table }}
+  </tr>
+  <tr>
+    <td colspan="2">
+    <input class="btn" type="submit" value="送出">
+  	<a class="btn4" href="{% url 'product:product' %}">放棄</a>
+ 	 </td>
+  </tr> 
+  </table> 
+  
 </form>
 {% endblock %}

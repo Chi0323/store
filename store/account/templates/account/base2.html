@@ -9,14 +9,17 @@
     {% block css %}{% endblock %}
   </head>
   <body>
+  <div id="wrapper"> 
   <nav>
     {% include 'main/menu.html' %}
   </nav>  
   <div id="content2">
+  	<p class="title">{% block heading %}{% endblock %}</p>
   	{% include 'main/messages.html' %}    
     {% block content %}{% endblock %}      
   </div>    
   <footer>{% include 'main/footer.html' %}</footer>
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% block script %}{% endblock %}
   </body>

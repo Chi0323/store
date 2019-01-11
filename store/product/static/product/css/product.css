@@ -14,12 +14,19 @@ table{
   border:none;
 /*  border: thin solid red;*/
 }
+th{
+  border:none;
+}
 
 td{
   border:none;
- /* border: thin solid red;*/
+ /* */
   /*border: none;*/
   padding: 5px;
+}
+
+#create{
+  padding-left: 20px;
 }
 
 .photo{
@@ -47,26 +54,4 @@ p{
 
 a{
   text-decoration: none;
-}
-
-.btn3{
-  background-color:#ff4447;
-  color:White;  
-  font-size: 18px;
-  padding: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #ff4447;  
-  text-align: center;
-}
-
-.btn4{
-  background-color:#ffd00a;
-  color:White;  
-  font-size: 18px;
-  padding: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #ffd00a;  
-  text-align: center;
 }

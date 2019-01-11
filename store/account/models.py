@@ -4,10 +4,10 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     username = models.EmailField(max_length=50, unique=True)
-    fullName = models.CharField(max_length=128)
-    telephone = models.CharField(max_length=10, blank=False)
-    birthday = models.DateField(blank=False)
-    address = models.CharField(max_length=128, blank=False)
+    fullName = models.CharField(max_length=128,null=True)
+    telephone = models.CharField(max_length=10,null=True)
+    birthday = models.DateField(null=True)
+    address = models.CharField(max_length=128,null=True)
 
 
 

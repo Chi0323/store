@@ -8,24 +8,21 @@
     {% block css %}{% endblock %}
   </head>
   <body>
+  <div id="wrapper"> 
   <nav>
     {% include 'main/menu.html' %}
   </nav>
-  {% block header %}{% endblock %}
-
-  
+  {% block header %}{% endblock %}  
   <aside>{% include 'main/aside.html' %}</aside>
   
   <div id="content">
   {% include 'main/messages.html' %}
-  <h2>{% block heading %}{% endblock %}</h2>
-    
-      {% block content %}{% endblock %}
-      
+  <h2>{% block heading %}{% endblock %}</h2>    
+      {% block content %}{% endblock %}      
   </div>
-  
-    
   <footer>{% include 'main/footer.html' %}</footer>
+   
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% block script %}{% endblock %}
   </body>

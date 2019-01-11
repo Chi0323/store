@@ -56,6 +56,7 @@ class UserForm(forms.ModelForm):
         widget=forms.TextInput(attrs={"placeholder": "電話", "class": "form-control"})
         )
     birthday = forms.DateField(
+        required=True,
         label='', 
         widget=forms.TextInput(attrs={"placeholder": "生日", 'type':'date',"class": "form-control"})
         )   
