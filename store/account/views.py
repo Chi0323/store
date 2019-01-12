@@ -5,7 +5,7 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 
 from account.forms import UserForm
-
+from account.forms import AskForm
 
 def register(request):
     '''
@@ -62,3 +62,12 @@ def account(request):
     Render the edit page
     '''
     return render(request, 'account/account.html')
+
+def ask(request):
+    '''
+    Create a new answer
+    '''
+    template = 'account/ask.html'
+    if request.method =='GET':
+        return render(request, template, {'askForm':AskForm()})
+    return render(request, 'account/ask.html')

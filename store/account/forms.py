@@ -1,5 +1,6 @@
 from django import forms
 from account.models import User
+from random import choices
 
 class UserForm(forms.ModelForm):
     username = forms.EmailField(
@@ -87,3 +88,38 @@ class UserForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+class AskForm(forms.ModelForm):
+    asktype=forms.fields.ChoiceField(
+        choices=((1,'訂單'),(2,'出貨'),(3,'退貨/退款'),(4,'取消訂單'),(5,'其他')),
+        required=True,
+        label='問題類型',
+        widget=forms.widgets.RadioSelect
+        )
+    asktittle=forms.CharField(
+        required=True,
+        error_messages={
+            "require":"標題不能空白",
+        },
+        label='發問標題',
+        widget=forms.TextInput(attrs={"class":"form-control"})
+        )
+    ordernumber=forms.CharField(
+        required=True,
+        error_messages={
+            "require":"請輸入訂單編號",
+        },
+        label='訂單編號',
+        widget=forms.TextInput(attrs={"class":"form-control"})
+        )
+    suggest=forms.CharField(
+        required=True,
+        error_messages={
+            "require":"問題與建議內容不能空白",
+        },
+        label='問題與建議',
+        widget=forms.TextInput(attrs={"class":"form-control"})
+        )
+    class Meta:
+        model = User
+        fields = ['asktype','asktittle','ordernumber','suggest',]
+        widgets ={'asktype':forms.RadioSelect}
