@@ -9,14 +9,14 @@ html, body {
 }
 
 #wrapper {
-  width: 75%;    /* 960px */
-  min-width: 800px;
+  width:1005px;/* 960px */
+  min-width: 1005px;
   margin: 0 auto;
   border: 1px solid red;
 }
 
 nav {
-  min-width: 800px;
+  min-width: 1000px;
   border: 1px solid #f2f2f2;
 }
 
@@ -29,15 +29,18 @@ header {
   border: 1px solid #f2f2f2;
 }
 aside {
-  width: 20%;
-  height: 30em;
+  height: auto;
+  min-width: 185px;
+
   float: left;
   border: 1px solid #f2f2f2;
 }
 
 div#content {
-  width: 80%;
-  height: 30em;
+  width: 815px;
+  min-width: 812px;
+  height: auto;
+  min-height: 30em;
   float: left;
   border: 1px solid #f2f2f2;
 }
