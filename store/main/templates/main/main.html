@@ -1,10 +1,135 @@
 {% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+{% endblock %}
 {% block header %}
   <header><img  id="winter" src="/static/main/img/冬季特賣.png"></header>
 {% endblock %}
-
 {% block content %}
-
-  <a href="{% url 'product:product' %}">商品</a>
-  
+    
+<table border="1" class="inlineBlock">
+  <tr>
+    <td><img class="photo" src="/static/product/img/4.jpg"></td>
+  </tr>
+  <tr>
+    <td><p class="t1"><a href="/product/productRead/1/">PHILIPS 果汁機</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="t1">售價$1730</p></td>
+  </tr>
+  <tr>
+  <td align="center">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/1/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/1/">
+        <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
+        <input class="btn deleteConfirm" type="submit" value="刪除">
+      </form> 
+    </td>
+  </tr> 
+</table>
+      
+<table border="1" class="inlineBlock">
+  <tr>
+    <td><img class="photo" src="/static/product/img/5.jpg"></td>
+  </tr>
+  <tr>
+    <td><p class="t1"><a href="/product/productRead/2/">TATUNG大同 電烤箱</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="t1">售價$1790</p></td>
+  </tr>
+  <tr>
+  <td align="center">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/2/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/2/">
+        <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
+        <input class="btn deleteConfirm" type="submit" value="刪除">
+      </form> 
+    </td>
+  </tr> 
+</table>
+      
+<table border="1" class="inlineBlock">
+  <tr>
+    <td><img class="photo" src="/static/product/img/6.jpg"></td>
+  </tr>
+  <tr>
+    <td><p class="t1"><a href="/product/productRead/3/">Panasonic 奈米水離子吹風機</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="t1">售價$3390</p></td>
+  </tr>
+  <tr>
+  <td align="center">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/3/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/3/">
+        <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
+        <input class="btn deleteConfirm" type="submit" value="刪除">
+      </form> 
+    </td>
+  </tr> 
+</table>
+      
+<table border="1" class="inlineBlock">
+  <tr>
+    <td><img class="photo" src="/static/product/img/7.jpg"></td>
+  </tr>
+  <tr>
+    <td><p class="t1"><a href="/product/productRead/4/">TATUANG大同 DC直流變頻立扇</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="t1">售價$2390</p></td>
+  </tr>
+  <tr>
+  <td align="center">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/4/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/4/">
+        <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
+        <input class="btn deleteConfirm" type="submit" value="刪除">
+      </form> 
+    </td>
+  </tr> 
+</table>
+      
+<table border="1" class="inlineBlock">
+  <tr>
+    <td><img class="photo" src="/static/product/img/8.jpg"></td>
+  </tr>
+  <tr>
+    <td><p class="t1"><a href="/product/productRead/5/">Panasonic 蒸氣熨斗</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="t1">售價$799</p></td>
+  </tr>
+  <tr>
+  <td align="center">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/5/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/5/">
+        <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
+        <input class="btn deleteConfirm" type="submit" value="刪除">
+      </form> 
+    </td>
+  </tr>   
+</table>
+<table border="1" class="inlineBlock">
+  <tr>
+    <td><img class="photo" src="/static/product/img/9.jpg"></td>
+  </tr>
+  <tr>
+    <td><p class="t1"><a href="/product/productRead/5/">Kolin歌林 智慧掃地機器人</a></p></td>
+  </tr>
+  <tr>
+    <td><p class="t1">售價$5290</p></td>
+  </tr>
+  <tr>
+  <td align="center">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/5/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/5/">
+        <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
+        <input class="btn deleteConfirm" type="submit" value="刪除">
+      </form> 
+    </td>
+  </tr>   
+</table>
 {% endblock %}
