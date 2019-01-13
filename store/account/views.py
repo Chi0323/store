@@ -70,4 +70,11 @@ def ask(request):
     template = 'account/ask.html'
     if request.method =='GET':
         return render(request, template, {'askForm':AskForm()})
+    
+    # POST
+    askForm = AskForm(request.POST)
+    if not askForm.is_valid():
+        return render(request, template, {'askForm':askForm})
+    askForm.save()
+    messages.success(request, '問答紀錄已新增')
     return render(request, 'account/ask.html')

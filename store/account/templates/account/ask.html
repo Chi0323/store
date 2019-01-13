@@ -1,6 +1,7 @@
 {% extends "account/frame.html" %}
 {% load staticfiles %}
 {% block frame %}
+<form method="post" action="{% url 'account:ask' %}">
 <table >
     <tr id="askone">
         <td>發問日期</td>
@@ -26,5 +27,5 @@
    </td>
   </tr> 
   </table>
-  
+ </form>
 {% endblock %}
