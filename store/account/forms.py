@@ -3,11 +3,14 @@ from account.models import User
 from random import choices
 
 class UserForm(forms.ModelForm):
-    username = forms.EmailField(
+    username = forms.CharField(
         required=True,
+        min_length=6,
+        max_length=15,
         error_messages={
-            "required": "郵箱不能為空",
-            "invalid": "郵箱格式錯誤",
+            "required": "用户名不能為空",
+            "min_length": "用户名長度不能小於6", 
+            "max_length": "用户名長度不能小於15"
         },
         label='', 
         widget=forms.TextInput(attrs={"placeholder": "帳號 E-mail", "class": "form-control"})
