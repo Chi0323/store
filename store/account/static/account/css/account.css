@@ -22,7 +22,7 @@ table{
     margin: 0;
     padding: 15px 30px;
     border: 1px solid lightgray;
-    background-color: #E0E0E0;
+    background: linear-gradient(#f7f7f7, #dedede);
 }
 
 .title{
