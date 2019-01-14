@@ -14,3 +14,14 @@ class User(AbstractUser):
         return self.username
 
 
+ASKTYPE=(('訂單','訂單'),('出貨','出貨'),('退貨/退款','退貨/退款'),('取消訂單','取消訂單'),('其他','其他')),
+
+class Ask(models.Model):
+    asktype = models.CharField(max_length=20,choices = (('訂單','訂單'),('出貨','出貨'),('退貨/退款','退貨/退款'),('取消訂單','取消訂單'),('其他','其他')),null=True)
+    asktittle = models.CharField(max_length=128,null=True)
+    ordernumber = models.CharField(max_length=128,null=True)
+    suggest = models.CharField(max_length=128,null=True)
+  
+  
+    def __str__(self):
+        return self.asktittle
