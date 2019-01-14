@@ -1,6 +1,6 @@
 from django import forms
-from account.models import User
-from random import choices
+from account.models import User,Ask
+
 
 class UserForm(forms.ModelForm):
     username = forms.CharField(
@@ -101,7 +101,7 @@ class UserForm(forms.ModelForm):
         return user
 class AskForm(forms.ModelForm):
     asktype=forms.fields.ChoiceField(
-        choices=((1,'訂單'),(2,'出貨'),(3,'退貨/退款'),(4,'取消訂單'),(5,'其他')),
+        choices=(('訂單','訂單'),('出貨','出貨'),('退貨/退款','退貨/退款'),('取消訂單','取消訂單'),('其他','其他')),
         required=True,
         label='問題類型',
         widget=forms.widgets.RadioSelect
@@ -131,6 +131,6 @@ class AskForm(forms.ModelForm):
         widget=forms.TextInput(attrs={"class":"form-control"})
         )
     class Meta:
-        model = User
+        model = Ask
         fields = ['asktype','asktittle','ordernumber','suggest',]
         widgets ={'asktype':forms.RadioSelect}
