@@ -9,7 +9,7 @@
    {% for product in products %}   
 <table border="1" class="inlineBlock">
   <tr>
-    <td><img class="photo" src="{% static 'product/img/1.jpg' %}"></td>
+    <td><img class="photo" src="{% static 'product/img/' %}{{product.id}}.jpg"></td>
   </tr>
   <tr>
     <td><p class="t1"><a href="{% url 'product:productRead' product.id %}">{{ product.title }}</a></p></td>

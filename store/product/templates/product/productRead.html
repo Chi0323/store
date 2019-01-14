@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
 <div class="left">
-<img class="photo" src="/static/product/img/1.jpg">
+<img class="photo" src="{% static 'product/img/' %}{{product.id}}.jpg">
 </div>
 	<div class="right">
       <h3 class="inlineBlock">{{ product.title }}</h3>

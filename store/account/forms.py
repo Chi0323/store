@@ -13,7 +13,7 @@ class UserForm(forms.ModelForm):
             "max_length": "用户名長度不能小於15"
         },
         label='', 
-        widget=forms.TextInput(attrs={"placeholder": "帳號 E-mail", "class": "form-control"})
+        widget=forms.TextInput(attrs={"placeholder": "帳號", "class": "form-control"})
         )
     password = forms.CharField(
         required=True,
@@ -63,7 +63,15 @@ class UserForm(forms.ModelForm):
         required=True,
         label='', 
         widget=forms.TextInput(attrs={"placeholder": "生日", 'type':'date',"class": "form-control"})
-        )   
+        )
+    email = forms.EmailField(
+        required=True,
+        error_messages={
+            "required": "信箱不能為空",
+        },
+        label='', 
+        widget=forms.TextInput(attrs={"placeholder": "信箱", "class": "form-control"})
+        )    
     address = forms.CharField(
         required=True,
         max_length=128,
@@ -76,7 +84,7 @@ class UserForm(forms.ModelForm):
     
     class Meta:
         model = User
-        fields = ['username', 'password', 'password2', 'fullName', 'telephone','birthday', 'address']
+        fields = ['username', 'password', 'password2', 'fullName', 'telephone','birthday','email', 'address']
 
     def clean_password2(self):
         password = self.cleaned_data.get('password')

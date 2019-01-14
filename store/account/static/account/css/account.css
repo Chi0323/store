@@ -13,25 +13,40 @@ table{
   margin-right:auto;  
  /* border: 1px solid red;*/
 }
+.account{
+  width:400px;
+  /*border: 1px solid red;*/
+}
+.fcontent{
+  padding: 14px;
+  
+}
+
 #frameone{
-    border-collapse: collapse;
-    border: 1px solid lightgray;
+  border-collapse: collapse;
+  border: 1px solid lightgray;
 }
 
 #frameone th{
-    margin: 0;
-    padding: 15px 30px;
-    border: 1px solid lightgray;
-    background: linear-gradient(#f7f7f7, #dedede);
+  margin: 0;
+  padding: 15px 30px;
+  border: 1px solid lightgray;
+  background: linear-gradient(#f7f7f7, #dedede);
 }
 #askone td{
-    padding: 15px 30px;
-    border: 1px solid lightgray;
-    background-color:gray;
+  padding: 15px 30px;
+  border: 1px solid lightgray;
+  background-color:gray;
 }
 .title{
   text-align: center;
   font-size: 24px;
+  margin: 0;
+}
+
+.title2{
+  text-align: left;
+  font-size: 20px;
   margin: 0;
 }
 
