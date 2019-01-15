@@ -22,12 +22,12 @@ table{
   
 }
 
-#frameone{
+#frame{
   border-collapse: collapse;
   border: 1px solid lightgray;
 }
 
-#frameone th{
+.framemenu th{
   margin: 0;
   padding: 15px 30px;
   border: 1px solid lightgray;
@@ -55,6 +55,14 @@ table{
   width: 300px;
   margin: 0 10px  0 10px; /*上左下右*/
   font-size: 16px;
+  border-radius: 5px;
+}
+
+.form-control2{
+  text-align: left;
+  padding: 10px;
+  width: 300px;
+  margin:10px; /*上左下右*/
   border-radius: 5px;
 }
 
