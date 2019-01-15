@@ -1,0 +1,23 @@
+{% extends "account/frame.html" %}
+{% block frame %}
+
+<table class="tableone">
+<tr>
+  <td>訂單編號</td>
+  <td>訂單日期</td>
+  <td>合計</td>
+  <td>訂單狀態</td>
+  <td></td>
+</tr>
+{% for order in orders %}
+<tr>
+  <td>1</td>
+  <td>{{ order.pubDateTime|date:'Y-m-d H:i' }}</td>
+  <td>{{ order.payment }}</td>
+  <td>待付款</td>
+  <td>查詢</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
