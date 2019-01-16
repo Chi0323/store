@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from order.models import Order
 from order.forms import OrderForm
+
 
 def order(request):
     '''
@@ -28,3 +29,14 @@ def orderCreate(request):
     orderForm.save()
     messages.success(request, '訂單已完成')
     return redirect('order:order')
+
+def orderSearch(request, orderId):
+    '''
+    Read an order
+        1. Get the "order" instance using "orderId"; redirect to the 404 page if not found
+        2. Render the orderRead template with the order instance and its
+           associated comments
+    '''
+    order = get_object_or_404(Order, id=orderId)
+    context = {'order': order, }
+    return render(request, 'order/orderSearch.html', context)

@@ -1,0 +1,85 @@
+{% extends 'account/base2.html' %}
+{% load staticfiles %}
+{% block content %}
+<table class="tableone">
+<tr>
+  <td>品項</td>
+  <td>商品名稱</th>
+  <td>規格</td>
+  <td>數量</th>
+  <td>單價</td>
+  <td>小計</td>
+</tr>
+<tr>
+  <td>圖</td>
+  <td>{{ product.title }}</td>
+  <td>{{ product.specifications }}</td>
+  <td>{{ product.price }}</td>
+  <td>{{ product.price }}</td>
+  <td>{{ product.price }}</td>
+</tr>
+</table>
+<hr>
+<div>
+<table class= "tableone">
+<tr>
+  <th>顧客資訊</th>
+</tr>
+<tr>
+  <td>姓名</td>
+  <td>{{ user.fullName }}</td>
+</tr>
+<tr>
+  <td>電子信箱</td>
+  <td class="date">{{ user.email }}</td>
+</tr>
+<tr>
+  <td>聯絡電話</td>
+  <td class="date">{{ user.telephone }}</td>
+</tr>
+<tr>
+  <th>訂單資訊</th>
+</tr>
+<tr>
+  <td>訂單編號</td>
+  <td>{{ order.id }}</td>
+</tr>
+<tr>  
+  <td>訂單日期</td>
+  <td>{{ order.pubDateTime|date:'Y-m-d H:i' }}</td>
+</tr>
+<tr>
+  <td>訂單狀態</td>
+  <td>待付款</td>
+</tr>
+<tr>
+  <th>送貨資訊</th>
+</tr>
+<tr>
+  <td>運送方式</td>
+  <td class="date">宅配到府</td>
+</tr>
+<tr>
+  <td>付款方式</td>
+  <td class="date">{{ order.payment }}</td>
+</tr>
+<tr>
+  <td>收件人</td>
+  <td class="date">{{ order.fullName }}</td>
+</tr>
+<tr>
+  <td>行動電話</td>
+  <td class="date">{{ order.telephone }}</td>
+</tr>
+<tr>
+  <td>市話</td>
+  <td class="date">{{ order.phone }}</td>
+</tr>
+<tr>
+  <td>收件地址</td>
+  <td class="date">{{ order.address }}</td>
+</tr>
+</table>
+</div>
+
+{% endblock %} 

@@ -1,11 +1,15 @@
-{% extends "account/frame.html" %}
+{% extends 'account/base2.html' %}
 {% load staticfiles %}
-{% block frame %}
+{% block content %}
 <form method="post" action="{% url 'order:orderCreate' %}">
     {% csrf_token %}
-  <table id="order">
+  <table class="order">
   <tr>
     <td colspan="2"><p class="title">商品訂單</p></td>
+  </tr>
+  <tr>
+    <th>運送方式：</th>
+    <td>宅配到府</td>
   </tr>
     {{ orderForm.as_table }}
   <tr>

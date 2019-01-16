@@ -4,9 +4,11 @@
 <link rel="stylesheet" href="{% static 'product/css/product.css' %}">
 {% endblock %}
 {% block content %}
+{% if user.is_superuser %}
 <div id="create"><a class="btn" href="{% url 'product:productCreate' %}">新增產品</a></div>
+{% endif %}
    
-   {% for product in products %}   
+{% for product in products %}   
 <table border="1" class="inlineBlock">
   <tr>
     <td><img class="photo" src="{% static 'product/img/' %}{{product.id}}.jpg"></td>
@@ -17,6 +19,7 @@
   <tr>
     <td><p class="t1">售價${{ product.price }}</p></td>
   </tr>
+  {% if user.is_superuser %}
   <tr>
 	<td align="center">
 	  <p class="inlineBlock t1"><a class="btn" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
@@ -26,6 +29,7 @@
       </form> 
     </td>
   </tr> 
+  {% endif %}
 </table>
    {% endfor %}
 {% endblock %}

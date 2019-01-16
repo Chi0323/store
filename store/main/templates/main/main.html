@@ -7,8 +7,9 @@
   <header><img  id="winter" src="/static/main/img/冬季特賣.png"></header>
 {% endblock %}
 {% block content %}
+{% if user.is_superuser %}
 <div id="create"><a class="btn" href="{% url 'product:productCreate' %}">新增產品</a></div>
-    
+{% endif %}    
 <table border="1" class="inlineBlock">
   <tr>
     <td><img class="photo" src="/static/product/img/4.jpg"></td>
@@ -19,6 +20,7 @@
   <tr>
     <td><p class="t1">售價$1730</p></td>
   </tr>
+  {% if user.is_superuser %}
   <tr>
   <td align="center">
     <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/1/">修改</a></p>
@@ -28,6 +30,7 @@
       </form> 
     </td>
   </tr> 
+  {% endif %}
 </table>
       
 <table border="1" class="inlineBlock">
@@ -40,15 +43,17 @@
   <tr>
     <td><p class="t1">售價$1790</p></td>
   </tr>
+  {% if user.is_superuser %}
   <tr>
   <td align="center">
-    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/2/">修改</a></p>
-      <form class="inlineBlock" method="post" action="/product/productDelete/2/">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/1/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/1/">
         <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
         <input class="btn deleteConfirm" type="submit" value="刪除">
       </form> 
     </td>
   </tr> 
+  {% endif %}
 </table>
       
 <table border="1" class="inlineBlock">
@@ -62,14 +67,17 @@
     <td><p class="t1">售價$3390</p></td>
   </tr>
   <tr>
+  {% if user.is_superuser %}
+  <tr>
   <td align="center">
-    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/3/">修改</a></p>
-      <form class="inlineBlock" method="post" action="/product/productDelete/3/">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/1/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/1/">
         <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
         <input class="btn deleteConfirm" type="submit" value="刪除">
       </form> 
     </td>
   </tr> 
+  {% endif %}
 </table>
       
 <table border="1" class="inlineBlock">
@@ -82,15 +90,17 @@
   <tr>
     <td><p class="t1">售價$2390</p></td>
   </tr>
+  {% if user.is_superuser %}
   <tr>
   <td align="center">
-    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/4/">修改</a></p>
-      <form class="inlineBlock" method="post" action="/product/productDelete/4/">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/1/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/1/">
         <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
         <input class="btn deleteConfirm" type="submit" value="刪除">
       </form> 
     </td>
   </tr> 
+  {% endif %}
 </table>
       
 <table border="1" class="inlineBlock">
@@ -103,15 +113,17 @@
   <tr>
     <td><p class="t1">售價$799</p></td>
   </tr>
+  {% if user.is_superuser %}
   <tr>
   <td align="center">
-    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/5/">修改</a></p>
-      <form class="inlineBlock" method="post" action="/product/productDelete/5/">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/1/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/1/">
         <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
         <input class="btn deleteConfirm" type="submit" value="刪除">
       </form> 
     </td>
-  </tr>   
+  </tr> 
+  {% endif %} 
 </table>
 <table border="1" class="inlineBlock">
   <tr>
@@ -123,14 +135,16 @@
   <tr>
     <td><p class="t1">售價$5290</p></td>
   </tr>
+  {% if user.is_superuser %}
   <tr>
   <td align="center">
-    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/5/">修改</a></p>
-      <form class="inlineBlock" method="post" action="/product/productDelete/5/">
+    <p class="inlineBlock t1"><a class="btn" href="/product/productUpdate/1/">修改</a></p>
+      <form class="inlineBlock" method="post" action="/product/productDelete/1/">
         <input type="hidden" name="csrfmiddlewaretoken" value="pDPYSooUlc8eFrqOf1AmZggHoRf80XWGdFydv8FVf5nOB2nRlbfKHQ59PAdVziMV">
         <input class="btn deleteConfirm" type="submit" value="刪除">
       </form> 
     </td>
-  </tr>   
+  </tr> 
+  {% endif %} 
 </table>
 {% endblock %}

@@ -1,14 +1,15 @@
-#order{
+.order{
   border-collapse: collapse;
   /*border: 1px solid lightgray;*/
 }
 
-#order th{
+.order th{
   margin: 0;
   padding: 5px;
+  text-align: right;
 }
 
-#order td{
+.order td{
   text-align: left;
 }
 

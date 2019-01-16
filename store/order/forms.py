@@ -46,7 +46,7 @@ class OrderForm(forms.ModelForm):
         error_messages={
             "required": "地址不能為空",
         },
-        label='地址', 
+        label='收件地址', 
         widget=forms.TextInput(attrs={"class": "form-control2"})
         )
     

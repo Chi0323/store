@@ -9,11 +9,13 @@
 </div>
 	<div class="right">
       <h3 class="inlineBlock">{{ product.title }}</h3>
+      {% if user.is_superuser %}
       <p class="inlineBlock"><a class="btn" href="{% url 'product:productUpdate' product.id %}">修改</a></p>
       <form class="inlineBlock" method="post" action="{% url 'product:productDelete' product.id %}">
         {% csrf_token %}
         <input class="btn deleteConfirm" type="submit" value="刪除">
-      </form>       
+      </form>      
+      {% endif %} 
       <hr>
       <table border="1">
 		<tr>
@@ -38,10 +40,8 @@
 		</tr>
 		</table>
     <p class="inlineBlock"><input class="btn2" type="submit" value="加入購物車"></p>
-    <form class="inlineBlock" method="post" action="{% url 'cart:cartCreate' %}">
-        {% csrf_token %}
-        <input class="btn3" type="submit" value="直接購買">
-      </form>  
+      <p class="btn3 inlineBlock"><a class="btn3" href="{% url 'order:orderCreate' %}">直接購買</a></p>
+
 	</div>
 {% endblock %}
 {% block script %}
