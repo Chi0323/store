@@ -1,5 +1,8 @@
 {% extends 'account/base2.html' %}
 {% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'product/css/product.css' %}">
+{% endblock %}
 {% block content %}
 <table class="tableone">
 <tr>
@@ -11,12 +14,12 @@
   <td>小計</td>
 </tr>
 <tr>
-  <td>圖</td>
-  <td>{{ product.title }}</td>
-  <td>{{ product.specifications }}</td>
-  <td>{{ product.price }}</td>
-  <td>{{ product.price }}</td>
-  <td>{{ product.price }}</td>
+  <td><img class="photo2" src="{% static 'product/img/' %}{{order.product.id}}.jpg"></td>
+  <td>{{ order.product.title }}</td>
+  <td>{{ order.product.specifications }}</td>
+  <td>{{ order.product.price }}</td>
+  <td>{{ order.product.quantity }}</td>
+  <td>{{ order.product.price }}</td>
 </tr>
 </table>
 <hr>
