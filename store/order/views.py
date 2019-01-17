@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from order.models import Order
 from order.forms import OrderForm
+from product.models import Product
 
 
 def order(request):
@@ -13,22 +14,26 @@ def order(request):
     context = {'orders':orders}
     return render(request, 'order/order.html',context)
 
-def orderCreate(request):
+def orderCreate(request, productId):
     '''
     orderCreate a new order
     '''
+    product = get_object_or_404(Product, id=productId)
     template = 'order/orderCreate.html'
     if request.method == 'GET':
-        return render(request, template, {'orderForm':OrderForm()})
+        return render(request, template, {'orderForm':OrderForm(), 'product':product})
 
     # POST
     orderForm = OrderForm(request.POST)
     if not orderForm.is_valid():
         return render(request, template, {'orderForm':orderForm})
 
-    orderForm.save()
+    order = orderForm.save(commit=False)
+    product = get_object_or_404(Product, id=productId)
+    order.product = product
+    order.save()
     messages.success(request, '訂單已完成')
-    return redirect('order:order')
+    return redirect('order:order', )
 
 def orderSearch(request, orderId):
     '''
@@ -38,5 +43,7 @@ def orderSearch(request, orderId):
            associated comments
     '''
     order = get_object_or_404(Order, id=orderId)
-    context = {'order': order, }
+    context = {'order': order}
     return render(request, 'order/orderSearch.html', context)
+
+
