@@ -13,7 +13,7 @@
 <tr>
   <td>{{ order.id }}</td>
   <td>{{ order.pubDateTime|date:'Y-m-d H:i' }}</td>
-  <td>{{ order.payment }}</td>
+  <td>{{ order.product.price }}</td>
   <td>待付款</td>
   <td><a class="line" href="{% url 'order:orderSearch' order.id %}">查詢</a></td>
 </tr>
