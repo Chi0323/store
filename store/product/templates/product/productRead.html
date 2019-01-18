@@ -39,8 +39,8 @@
 		  <td><p class="red">{{ product.quantity }}</p> </td>
 		</tr>
 		</table>
-    <p class="inlineBlock"><input class="btn2" type="submit" value="加入購物車"></p>
-      <p class="btn3 inlineBlock"><a class="btn3" href="{% url 'order:orderCreate' product.id %}">直接購買</a></p>
+    
+      <p><a class="btn2" href="{% url 'order:orderCreate' product.id %}">直接購買</a></p>
 
 	</div>
 {% endblock %}

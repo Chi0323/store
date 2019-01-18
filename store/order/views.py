@@ -33,7 +33,7 @@ def orderCreate(request, productId):
     order.product = product
     order.save()
     messages.success(request, '訂單已完成')
-    return redirect('order:order', )
+    return redirect('order:order')
 
 def orderSearch(request, orderId):
     '''
