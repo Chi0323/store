@@ -1,0 +1,26 @@
+{% extends "account/frame.html" %}
+{% load staticfiles %}
+{% block frame %}
+<form method="post" action="{% url 'account:ask' %}">
+{% csrf_token %}
+<table class="table2">
+    <tr class="item2">
+        <td>發問日期</td>
+        <td>訂單編號</td>
+        <td>問題類型</td>
+        <td>發問標題</td>
+        <td>發問內容</td>
+    </tr>
+{% for ask in asks %}
+<tr>
+  <td>{{ ask.pubDateTime|date:'Y-m-d H:i' }}</td>
+  <td>{{ ask.ordernumber }}</td>
+  <td>{{ ask.asktype }}</td>
+  <td>{{ ask.asktittle }}</td>
+  <td>{{ ask.suggest }}</td>
+</tr>
+{% endfor %}
+
+   </table>
+ </form>
+{% endblock %}
