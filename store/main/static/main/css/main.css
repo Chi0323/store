@@ -184,7 +184,6 @@ td{
 
 .table1 th{
   padding:5px;
-  background: #AFEEEE ;
 }
 
 .table1 td{
@@ -235,6 +234,23 @@ ul#id_asktype{
   text-align:left;
   border: none;
 }
+
+.table4{
+  padding:5px;
+}
+
+.table4 th{
+  padding:5px;
+  background: #AFEEEE ;
+}
+
+.table4 td{
+  padding:5px;
+}
+
+.table5{
+  border: none;
+}
 /* Button */
 .btn {
   display: inline-block;
@@ -276,6 +292,8 @@ ul#id_asktype{
   border: 1px solid #888a85;
   background:white;
 }
+
+
 
 /* Misc */
 .inlineBlock {
