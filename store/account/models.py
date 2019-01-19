@@ -21,6 +21,7 @@ class Ask(models.Model):
     asktittle = models.CharField(max_length=128,null=True)
     ordernumber = models.CharField(max_length=128,null=True)
     suggest = models.CharField(max_length=128,null=True)
+    pubDateTime = models.DateTimeField(auto_now_add=True)
   
   
     def __str__(self):

@@ -6,6 +6,7 @@ from django.contrib.auth import logout as auth_logout
 
 from account.forms import UserForm
 from account.forms import AskForm
+from account.models import Ask
 
 def register(request):
     '''
@@ -62,12 +63,20 @@ def account(request):
     Render the edit page
     '''
     return render(request, 'account/account.html')
-
 def ask(request):
+    '''
+    Render the ask page
+    '''
+    asks = Ask.objects.all()
+    print(asks)
+    context = {'asks':asks}
+    return render(request, 'account/ask.html',context)
+
+def askCreate(request):
     '''
     Create a new answer
     '''
-    template = 'account/ask.html'
+    template = 'account/askCreate.html'
     if request.method =='GET':
         return render(request, template, {'askForm':AskForm()})
     
@@ -77,4 +86,4 @@ def ask(request):
         return render(request, template, {'askForm':askForm})
     askForm.save()
     messages.success(request, '問答紀錄已新增')
-    return render(request, 'account/ask.html')
+    return redirect( 'account:ask')

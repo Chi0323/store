@@ -10,21 +10,6 @@ div.right{
  /* border: 1px solid cyan;*/
 }
 
-table{
-  border:none;
-/*  border: thin solid red;*/
-}
-th{
-  border:none;
-}
-
-td{
-  border:none;
- /* */
-  /*border: none;*/
-  padding: 5px;
-}
-
 #create{
   padding-left: 20px;
 }
@@ -50,6 +35,9 @@ td{
 p{
   padding:0;
   margin: 0; 
+}
+.buy{
+  padding:11px;
 }
 .red{
   color:red; 

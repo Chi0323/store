@@ -105,10 +105,18 @@ ul#menu2 li{
 ul#menu2 a {                  /* 大多數的按鈕外觀在此設定 */
   display: block;           /* 區塊顯示，因此允許設定 padding */
   color: black;
-  padding: 0 3em;       /* 按鈕尺寸由 <a> 撐開 */
+  padding: 0 2em;       /* 按鈕尺寸由 <a> 撐開 */
 }
 ul#menu2 li:last-child {
   border-right: none;  
+}
+
+p#asideone {
+  color:white;
+  font-size:20px;
+  padding:  5px 10px;
+  background-color: #64B5F7;
+  margin:0;
 }
 
 ul#asidetwo {
@@ -160,15 +168,73 @@ p#footer3{
   border: 1px solid #E0E0E0;
   margin:0;
 }
-p#asideone {
-  color:white;
-  font-size:1.5em;
-  padding:  0 10px;
-  background-color: #64B5F7;
-  margin:0;
-  
+
+table{
+  border: none;
 }
 
+td{ 
+  border: none;
+  padding:5px;
+}
+
+.table1{
+  padding:5px;
+}
+
+.table1 th{
+  padding:5px;
+  background: #AFEEEE ;
+}
+
+.table1 td{
+  padding:5px;
+}
+
+.order{
+  border-collapse: collapse;
+  /*border: 1px solid lightgray;*/
+}
+
+.order th{
+  margin: 0;
+  padding: 5px;
+  text-align: right;
+}
+
+.order td{
+  text-align: left;
+}
+
+ul#id_payment{
+  padding: 0 ; 
+}
+.table2{
+  border-collapse: collapse;
+   border:1px solid lightgray;
+}
+.table2 td{
+   padding:10px;
+   border-bottom:1px solid lightgray;
+}
+
+.item1 td{
+  border:1px solid lightgray;
+}
+
+.item2 td{
+  background:#87CEFA;
+  border:1px solid lightgray;
+}
+
+ul#id_asktype{
+  padding: 0 ; 
+}
+
+.table3{
+  text-align:left;
+  border: none;
+}
 /* Button */
 .btn {
   display: inline-block;
@@ -192,13 +258,13 @@ p#asideone {
 }
 
 .btn3{
-  background-color:#ffd00a;
+  background-color:#ff4447;
   color:White;  
   font-size: 18px;
   padding: 10px;
   width: 200px;
   border-radius: 5px;
-  border: 1px solid #ffd00a;  
+  border: 1px solid #ff4447;  
   text-align: center;
 }
 .btn4 {

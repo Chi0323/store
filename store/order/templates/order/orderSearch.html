@@ -1,11 +1,11 @@
-{% extends 'account/base2.html' %}
+{% extends 'account/frame.html' %}
 {% load staticfiles %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'product/css/product.css' %}">
 {% endblock %}
-{% block content %}
-<table class="tableone">
-<tr>
+{% block  frame%}
+<table class="table2">
+<tr class="item2">
   <td>品項</td>
   <td>商品名稱</th>
   <td>規格</td>
@@ -13,7 +13,7 @@
   <td>單價</td>
   <td>小計</td>
 </tr>
-<tr>
+<tr class="item1">
   <td><img class="photo2" src="{% static 'product/img/' %}{{order.product.id}}.jpg"></td>
   <td>{{ order.product.title }}</td>
   <td>{{ order.product.specifications }}</td>
@@ -24,9 +24,9 @@
 </table>
 <hr>
 <div>
-<table class= "tableone">
+<table class= "table1">
 <tr>
-  <th>顧客資訊</th>
+  <th colspan="2">顧客資訊</th>
 </tr>
 <tr>
   <td>姓名</td>
@@ -41,7 +41,7 @@
   <td class="date">{{ user.telephone }}</td>
 </tr>
 <tr>
-  <th>訂單資訊</th>
+  <th colspan="2">訂單資訊</th>
 </tr>
 <tr>
   <td>訂單編號</td>
@@ -56,7 +56,7 @@
   <td>待付款</td>
 </tr>
 <tr>
-  <th>送貨資訊</th>
+  <th colspan="2">送貨資訊</th>
 </tr>
 <tr>
   <td>運送方式</td>

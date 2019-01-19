@@ -112,7 +112,7 @@ class AskForm(forms.ModelForm):
             "require":"標題不能空白",
         },
         label='發問標題',
-        widget=forms.TextInput(attrs={"class":"form-control"})
+        widget=forms.TextInput(attrs={"class":"form-control2"})
         )
     ordernumber=forms.CharField(
         required=True,
@@ -120,7 +120,7 @@ class AskForm(forms.ModelForm):
             "require":"請輸入訂單編號",
         },
         label='訂單編號',
-        widget=forms.TextInput(attrs={"class":"form-control"})
+        widget=forms.TextInput(attrs={"class":"form-control2"})
         )
     suggest=forms.CharField(
         required=True,
@@ -128,7 +128,7 @@ class AskForm(forms.ModelForm):
             "require":"問題與建議內容不能空白",
         },
         label='問題與建議',
-        widget=forms.TextInput(attrs={"class":"form-control"})
+        widget=forms.TextInput(attrs={"class":"form-control2"})
         )
     class Meta:
         model = Ask

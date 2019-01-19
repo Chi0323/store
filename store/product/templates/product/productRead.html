@@ -17,7 +17,7 @@
       </form>      
       {% endif %} 
       <hr>
-      <table border="1">
+      <table class="table3">
 		<tr>
 		  <td><p class="title">產品介紹</p></td>
 		  <td><div class="productContent">{{ product.content|linebreaks }}</div></td>
@@ -38,9 +38,20 @@
 		  <td><p class="title">數量</p></td>
 		  <td><p class="red">{{ product.quantity }}</p> </td>
 		</tr>
+     {% if user.is_authenticated %}
+    <tr>
+        <td colspan="2"><p class="buy"><a class="btn2" href="{% url 'order:orderCreate' product.id %}">直接購買</a></p></td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="2"><p class="buy"><a class="btn2" href="{% url 'account:login' %}">直接購買</a></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center"><p>購買前請先登入</p></td>
+    </tr>
+    {% endif %}
 		</table>
     
-      <p><a class="btn2" href="{% url 'order:orderCreate' product.id %}">直接購買</a></p>
 
 	</div>
 {% endblock %}
