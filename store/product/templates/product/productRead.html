@@ -44,10 +44,7 @@
     </tr>
     {% else %}
     <tr>
-        <td colspan="2"><p class="buy"><a class="btn2" href="{% url 'account:login' %}">直接購買</a></p></td>
-    </tr>
-    <tr>
-      <td colspan="2" style="text-align:center"><p>購買前請先登入</p></td>
+        <td colspan="2"><p class="buy"><a class="btn2" href="{% url 'account:login' %}">直接購買</a>&nbsp;&nbsp;購買前請先<a href="{% url 'account:login' %}">登入</a></p></td>
     </tr>
     {% endif %}
 		</table>
